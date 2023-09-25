@@ -19,6 +19,7 @@ function getParameterizedSQLWithParams(req) {
     const {
         song,
         year,
+        album,
         month, month2,
         artist, compareArtist,
         operation,
@@ -40,6 +41,11 @@ function getParameterizedSQLWithParams(req) {
     if (year) {
         whereClauses.push(`year = $${values.length + 1}`);
         values.push(year);
+    }
+
+    if (album) {
+        whereClauses.push(`album = $${values.length + 1}`);
+        values.push(album);
     }
 
     switch (operation) {
@@ -98,6 +104,7 @@ function getParameterizedSQLWithParams(req) {
     }
 
     sql += " " + orderClause + " " + operationClause;
+    console.log(sql, values)
     return { sql, values }
 }
 
