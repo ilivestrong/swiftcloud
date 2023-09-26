@@ -1,0 +1,1090 @@
+{
+	"info": {
+		"_postman_id": "268dc023-3f08-40b9-9c36-8bfb82ef76cf",
+		"name": "Swiftcloud Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28412434"
+	},
+	"item": [
+		{
+			"name": "Song list by filters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"album\": \"Folklore\",\n    \"sortBy\": \"album\",\n    \"order\": \"DESC\",\n    \"limit\": 10,\n    \"offset\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch song(s) based on filters, which could be either of below, along with pagingation and sorting params.\n\n1. \"**column-name**\": column name filter which could be any or all of, with respective value as shown in example (_**Optional**_):\n    1. \"song\"\n    2. \"album\"\n    3. \"artist\"\n    4. \"year\"\n2. \"**sortBy**\": Either of (_**Optional)**_:\n    1. \"song\"\n    2. \"album\"\n    3. \"artist\"\n    4. \"year\"\n3. \"**order**\": Either of \"ASC\" or \"DESC\".\n4. \"**limit**\": No. of records to return per request.(**pagination**) (_**Optional**_)\n5. \"**offset**\": No. of rows to skip. (**pagination**) (_**Optional**_)"
+			},
+			"response": [
+				{
+					"name": "All",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"album\": \"Folklore\",\n    \"sortBy\": \"album\",\n    \"order\": \"DESC\",\n    \"limit\": 10,\n    \"offset\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1784"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:12:58 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f531b4da-da5e-4a61-9779-e5d0301c717b"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "1784"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0rfzFTzSQ0FgHA="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"6f8-bg4n80P3zVMc9axvN+za/hNQZJk\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511bf98-2fe1dff370099a460c9ac65f;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "4toZzuD35fJ_SgYohXG0LkavVsldvAUzmGmjn4MQOo6Im7LlIcc5pg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"The 1\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"68\",\n            \"Plays-July\": \"6\",\n            \"Plays-August\": \"61 \"\n        },\n        {\n            \"Song\": \"August\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Jack Antonoff\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"10\",\n            \"Plays-July\": \"40\",\n            \"Plays-August\": \"26 \"\n        },\n        {\n            \"Song\": \"Betty\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift William Bowery\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"73\",\n            \"Plays-July\": \"54\",\n            \"Plays-August\": \"78 \"\n        },\n        {\n            \"Song\": \"Cardigan\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"84\",\n            \"Plays-July\": \"64\",\n            \"Plays-August\": \"59 \"\n        },\n        {\n            \"Song\": \"Epiphany\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"44\",\n            \"Plays-July\": \"110\",\n            \"Plays-August\": \"29 \"\n        },\n        {\n            \"Song\": \"Exile\",\n            \"Artist\": \"Taylor Swift featuring Bon Iver\",\n            \"Writer\": \"Taylor Swift Justin Vernon William Bowery\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"6\",\n            \"Plays-July\": \"87\",\n            \"Plays-August\": \"72 \"\n        },\n        {\n            \"Song\": \"Hoax\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"34\",\n            \"Plays-July\": \"16\",\n            \"Plays-August\": \"19 \"\n        },\n        {\n            \"Song\": \"Illicit Affairs\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Jack Antonoff\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"12\",\n            \"Plays-July\": \"4\",\n            \"Plays-August\": \"34 \"\n        },\n        {\n            \"Song\": \"Invisible String\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"7\",\n            \"Plays-July\": \"24\",\n            \"Plays-August\": \"3 \"\n        },\n        {\n            \"Song\": \"The Last Great American Dynasty\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"74\",\n            \"Plays-July\": \"79\",\n            \"Plays-August\": \"55 \"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Song(s) play count by month",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"monthlyPlays\",\n    \"month\": \"june\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch each song's play count _**by month**_ specified.\n\n1. \"**song**\": song name for only one song play count(_**optional**_).\n2. \"**operation**\": \"**monthlyPlays**\"\n3. \"**month**\": Either of \"**june**\" / \"**july**\" / \"**august**\""
+			},
+			"response": [
+				{
+					"name": "Song(s) play count by month",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"monthlyPlays\",\n    \"month\": \"june\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7913"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:07:16 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ae15c8d9-8e21-4684-9595-c5ba7fe2e172"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "7913"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qqvFn7yQ0Fk4Q="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1ee9-Zrvk/4NMWSjWcT99akDyRAZCruw\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be44-310b9b4c2fbc0cc734d7bab4;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "3TKAPlOOxkkCJJu4wrIEh2OCsdLpFvrT9uh-yM-Tidzdcpxi9y_jsQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"The 1\",\n            \"monthly_plays\": 68\n        },\n        {\n            \"Song\": \"22\",\n            \"monthly_plays\": 27\n        },\n        {\n            \"Song\": \"Afterglow\",\n            \"monthly_plays\": 90\n        },\n        {\n            \"Song\": \"All Too Well\",\n            \"monthly_plays\": 71\n        },\n        {\n            \"Song\": \"All You Had to Do Was Stay\",\n            \"monthly_plays\": 78\n        },\n        {\n            \"Song\": \"American Girl (cover)\",\n            \"monthly_plays\": 109\n        },\n        {\n            \"Song\": \"The Archer\",\n            \"monthly_plays\": 23\n        },\n        {\n            \"Song\": \"August\",\n            \"monthly_plays\": 10\n        },\n        {\n            \"Song\": \"Babe\",\n            \"monthly_plays\": 19\n        },\n        {\n            \"Song\": \"Back to December\",\n            \"monthly_plays\": 50\n        },\n        {\n            \"Song\": \"Bad Blood (album version)\",\n            \"monthly_plays\": 10\n        },\n        {\n            \"Song\": \"Bad Blood (remixed single version)\",\n            \"monthly_plays\": 22\n        },\n        {\n            \"Song\": \"Beautiful Eyes\",\n            \"monthly_plays\": 17\n        },\n        {\n            \"Song\": \"Beautiful Ghosts\",\n            \"monthly_plays\": 100\n        },\n        {\n            \"Song\": \"Begin Again\",\n            \"monthly_plays\": 17\n        },\n        {\n            \"Song\": \"The Best Day\",\n            \"monthly_plays\": 68\n        },\n        {\n            \"Song\": \"Bette Davis Eyes (live cover)\",\n            \"monthly_plays\": 52\n        },\n        {\n            \"Song\": \"Better than Revenge\",\n            \"monthly_plays\": 5\n        },\n        {\n            \"Song\": \"Betty\",\n            \"monthly_plays\": 73\n        },\n        {\n            \"Song\": \"Big Star (Live)\",\n            \"monthly_plays\": 62\n        },\n        {\n            \"Song\": \"Blank Space\",\n            \"monthly_plays\": 37\n        },\n        {\n            \"Song\": \"Both of Us\",\n            \"monthly_plays\": 104\n        },\n        {\n            \"Song\": \"Breathe\",\n            \"monthly_plays\": 64\n        },\n        {\n            \"Song\": \"Breathless (cover)\",\n            \"monthly_plays\": 68\n        },\n        {\n            \"Song\": \"Call It What You Want\",\n            \"monthly_plays\": 87\n        },\n        {\n            \"Song\": \"Cardigan\",\n            \"monthly_plays\": 84\n        },\n        {\n            \"Song\": \"Change\",\n            \"monthly_plays\": 34\n        },\n        {\n            \"Song\": \"Christmas Must Be Something More\",\n            \"monthly_plays\": 49\n        },\n        {\n            \"Song\": \"Christmas Tree Farm\",\n            \"monthly_plays\": 104\n        },\n        {\n            \"Song\": \"Christmases When You Were Mine\",\n            \"monthly_plays\": 80\n        },\n        {\n            \"Song\": \"Clean\",\n            \"monthly_plays\": 61\n        },\n        {\n            \"Song\": \"Cold as You\",\n            \"monthly_plays\": 84\n        },\n        {\n            \"Song\": \"Come Back... Be Here\",\n            \"monthly_plays\": 62\n        },\n        {\n            \"Song\": \"Come in with the Rain\",\n            \"monthly_plays\": 21\n        },\n        {\n            \"Song\": \"Cornelia Street\",\n            \"monthly_plays\": 27\n        },\n        {\n            \"Song\": \"Crazier\",\n            \"monthly_plays\": 96\n        },\n        {\n            \"Song\": \"Cruel Summer\",\n            \"monthly_plays\": 18\n        },\n        {\n            \"Song\": \"Dancing with Our Hands Tied\",\n            \"monthly_plays\": 55\n        },\n        {\n            \"Song\": \"Daylight\",\n            \"monthly_plays\": 48\n        },\n        {\n            \"Song\": \"Death by a Thousand Cuts\",\n            \"monthly_plays\": 59\n        },\n        {\n            \"Song\": \"Dear John\",\n            \"monthly_plays\": 66\n        },\n        {\n            \"Song\": \"Delicate\",\n            \"monthly_plays\": 12\n        },\n        {\n            \"Song\": \"Don't Blame Me\",\n            \"monthly_plays\": 91\n        },\n        {\n            \"Song\": \"Dress\",\n            \"monthly_plays\": 25\n        },\n        {\n            \"Song\": \"Drops of Jupiter (live cover)\",\n            \"monthly_plays\": 86\n        },\n        {\n            \"Song\": \"Enchanted\",\n            \"monthly_plays\": 26\n        },\n        {\n            \"Song\": \"End Game\",\n            \"monthly_plays\": 0\n        },\n        {\n            \"Song\": \"Epiphany\",\n            \"monthly_plays\": 44\n        },\n        {\n            \"Song\": \"Everything Has Changed\",\n            \"monthly_plays\": 79\n        },\n        {\n            \"Song\": \"Exile\",\n            \"monthly_plays\": 6\n        },\n        {\n            \"Song\": \"Eyes Open\",\n            \"monthly_plays\": 50\n        },\n        {\n            \"Song\": \"False God\",\n            \"monthly_plays\": 16\n        },\n        {\n            \"Song\": \"Fearless\",\n            \"monthly_plays\": 86\n        },\n        {\n            \"Song\": \"Fifteen\",\n            \"monthly_plays\": 64\n        },\n        {\n            \"Song\": \"Forever & Always\",\n            \"monthly_plays\": 5\n        },\n        {\n            \"Song\": \"Forever & Always (piano version)\",\n            \"monthly_plays\": 69\n        },\n        {\n            \"Song\": \"Getaway Car\",\n            \"monthly_plays\": 91\n        },\n        {\n            \"Song\": \"Girl at Home\",\n            \"monthly_plays\": 64\n        },\n        {\n            \"Song\": \"Gorgeous\",\n            \"monthly_plays\": 19\n        },\n        {\n            \"Song\": \"Half of My Heart (album version)\",\n            \"monthly_plays\": 20\n        },\n        {\n            \"Song\": \"Haunted\",\n            \"monthly_plays\": 29\n        },\n        {\n            \"Song\": \"Hey Stephen\",\n            \"monthly_plays\": 41\n        },\n        {\n            \"Song\": \"Highway Don't Care\",\n            \"monthly_plays\": 62\n        },\n        {\n            \"Song\": \"Hoax\",\n            \"monthly_plays\": 34\n        },\n        {\n            \"Song\": \"Hold On (live cover)\",\n            \"monthly_plays\": 91\n        },\n        {\n            \"Song\": \"Holy Ground\",\n            \"monthly_plays\": 43\n        },\n        {\n            \"Song\": \"How You Get the Girl\",\n            \"monthly_plays\": 59\n        },\n        {\n            \"Song\": \"I Almost Do\",\n            \"monthly_plays\": 46\n        },\n        {\n            \"Song\": \"I Did Something Bad\",\n            \"monthly_plays\": 66\n        },\n        {\n            \"Song\": \"I Don't Wanna Live Forever\",\n            \"monthly_plays\": 103\n        },\n        {\n            \"Song\": \"I Forgot That You Existed\",\n            \"monthly_plays\": 92\n        },\n        {\n            \"Song\": \"I Heart ?\",\n            \"monthly_plays\": 70\n        },\n        {\n            \"Song\": \"I Knew You Were Trouble\",\n            \"monthly_plays\": 12\n        },\n        {\n            \"Song\": \"I Know Places\",\n            \"monthly_plays\": 21\n        },\n        {\n            \"Song\": \"I Think He Knows\",\n            \"monthly_plays\": 93\n        },\n        {\n            \"Song\": \"I Want You Back (live cover)\",\n            \"monthly_plays\": 84\n        },\n        {\n            \"Song\": \"I Wish You Would\",\n            \"monthly_plays\": 14\n        },\n        {\n            \"Song\": \"If This Was a Movie\",\n            \"monthly_plays\": 15\n        },\n        {\n            \"Song\": \"Illicit Affairs\",\n            \"monthly_plays\": 12\n        },\n        {\n            \"Song\": \"Innocent\",\n            \"monthly_plays\": 20\n        },\n        {\n            \"Song\": \"Invisible\",\n            \"monthly_plays\": 46\n        },\n        {\n            \"Song\": \"Invisible String\",\n            \"monthly_plays\": 7\n        },\n        {\n            \"Song\": \"It's Nice to Have a Friend\",\n            \"monthly_plays\": 96\n        },\n        {\n            \"Song\": \"I'd Lie\",\n            \"monthly_plays\": 37\n        },\n        {\n            \"Song\": \"I'm Only Me When I'm with You\",\n            \"monthly_plays\": 0\n        },\n        {\n            \"Song\": \"Jump Then Fall\",\n            \"monthly_plays\": 21\n        },\n        {\n            \"Song\": \"King of My Heart\",\n            \"monthly_plays\": 59\n        },\n        {\n            \"Song\": \"The Lakes\",\n            \"monthly_plays\": 0\n        },\n        {\n            \"Song\": \"Last Christmas (cover)\",\n            \"monthly_plays\": 29\n        },\n        {\n            \"Song\": \"The Last Great American Dynasty\",\n            \"monthly_plays\": 74\n        },\n        {\n            \"Song\": \"Last Kiss\",\n            \"monthly_plays\": 64\n        },\n        {\n            \"Song\": \"The Last Time\",\n            \"monthly_plays\": 22\n        },\n        {\n            \"Song\": \"Long Live\",\n            \"monthly_plays\": 90\n        },\n        {\n            \"Song\": \"Long Live (single version)\",\n            \"monthly_plays\": 63\n        },\n        {\n            \"Song\": \"London Boy\",\n            \"monthly_plays\": 58\n        },\n        {\n            \"Song\": \"Look What You Made Me Do\",\n            \"monthly_plays\": 89\n        },\n        {\n            \"Song\": \"Love Story\",\n            \"monthly_plays\": 33\n        },\n        {\n            \"Song\": \"Lover\",\n            \"monthly_plays\": 57\n        },\n        {\n            \"Song\": \"Lover (Remix)\",\n            \"monthly_plays\": 59\n        },\n        {\n            \"Song\": \"The Lucky One\",\n            \"monthly_plays\": 61\n        },\n        {\n            \"Song\": \"Macavity (cover)\",\n            \"monthly_plays\": 10\n        },\n        {\n            \"Song\": \"Mad Woman\",\n            \"monthly_plays\": 38\n        },\n        {\n            \"Song\": \"The Man\",\n            \"monthly_plays\": 103\n        },\n        {\n            \"Song\": \"Mary's Song (Oh My My My)\",\n            \"monthly_plays\": 23\n        },\n        {\n            \"Song\": \"Me!\",\n            \"monthly_plays\": 34\n        },\n        {\n            \"Song\": \"Mean\",\n            \"monthly_plays\": 26\n        },\n        {\n            \"Song\": \"Mine\",\n            \"monthly_plays\": 97\n        },\n        {\n            \"Song\": \"Mirrorball\",\n            \"monthly_plays\": 94\n        },\n        {\n            \"Song\": \"Miss Americana & the Heartbreak Prince\",\n            \"monthly_plays\": 109\n        },\n        {\n            \"Song\": \"The Moment I Knew\",\n            \"monthly_plays\": 32\n        },\n        {\n            \"Song\": \"My Tears Ricochet\",\n            \"monthly_plays\": 54\n        },\n        {\n            \"Song\": \"Never Grow Up\",\n            \"monthly_plays\": 29\n        },\n        {\n            \"Song\": \"New Romantics\",\n            \"monthly_plays\": 71\n        },\n        {\n            \"Song\": \"New Year's Day\",\n            \"monthly_plays\": 54\n        },\n        {\n            \"Song\": \"Only the Young\",\n            \"monthly_plays\": 26\n        },\n        {\n            \"Song\": \"The Other Side of the Door\",\n            \"monthly_plays\": 74\n        },\n        {\n            \"Song\": \"Our Song\",\n            \"monthly_plays\": 57\n        },\n        {\n            \"Song\": \"Ours\",\n            \"monthly_plays\": 1\n        },\n        {\n            \"Song\": \"Out of the Woods\",\n            \"monthly_plays\": 51\n        },\n        {\n            \"Song\": \"The Outside\",\n            \"monthly_plays\": 41\n        },\n        {\n            \"Song\": \"Paper Rings\",\n            \"monthly_plays\": 31\n        },\n        {\n            \"Song\": \"Peace\",\n            \"monthly_plays\": 104\n        },\n        {\n            \"Song\": \"A Perfectly Good Heart\",\n            \"monthly_plays\": 100\n        },\n        {\n            \"Song\": \"Picture to Burn\",\n            \"monthly_plays\": 32\n        },\n        {\n            \"Song\": \"A Place in This World\",\n            \"monthly_plays\": 39\n        },\n        {\n            \"Song\": \"...Ready for It?\",\n            \"monthly_plays\": 27\n        },\n        {\n            \"Song\": \"Red\",\n            \"monthly_plays\": 58\n        },\n        {\n            \"Song\": \"Ronan\",\n            \"monthly_plays\": 60\n        },\n        {\n            \"Song\": \"Sad Beautiful Tragic\",\n            \"monthly_plays\": 2\n        },\n        {\n            \"Song\": \"Safe & Sound\",\n            \"monthly_plays\": 62\n        },\n        {\n            \"Song\": \"Santa Baby (cover)\",\n            \"monthly_plays\": 110\n        },\n        {\n            \"Song\": \"September (cover)\",\n            \"monthly_plays\": 20\n        },\n        {\n            \"Song\": \"Seven\",\n            \"monthly_plays\": 106\n        },\n        {\n            \"Song\": \"Shake It Off\",\n            \"monthly_plays\": 19\n        },\n        {\n            \"Song\": \"Should've Said No\",\n            \"monthly_plays\": 25\n        },\n        {\n            \"Song\": \"Silent Night (cover)\",\n            \"monthly_plays\": 57\n        },\n        {\n            \"Song\": \"So It Goes...\",\n            \"monthly_plays\": 22\n        },\n        {\n            \"Song\": \"Soon You'll Get Better\",\n            \"monthly_plays\": 110\n        },\n        {\n            \"Song\": \"Sparks Fly\",\n            \"monthly_plays\": 64\n        },\n        {\n            \"Song\": \"Speak Now\",\n            \"monthly_plays\": 98\n        },\n        {\n            \"Song\": \"Starlight\",\n            \"monthly_plays\": 48\n        },\n        {\n            \"Song\": \"State of Grace\",\n            \"monthly_plays\": 4\n        },\n        {\n            \"Song\": \"Stay Beautiful\",\n            \"monthly_plays\": 70\n        },\n        {\n            \"Song\": \"Stay Stay Stay\",\n            \"monthly_plays\": 13\n        },\n        {\n            \"Song\": \"The Story of Us\",\n            \"monthly_plays\": 6\n        },\n        {\n            \"Song\": \"Style\",\n            \"monthly_plays\": 103\n        },\n        {\n            \"Song\": \"Superman\",\n            \"monthly_plays\": 9\n        },\n        {\n            \"Song\": \"Superstar\",\n            \"monthly_plays\": 14\n        },\n        {\n            \"Song\": \"Sweeter than Fiction\",\n            \"monthly_plays\": 77\n        },\n        {\n            \"Song\": \"Teardrops on My Guitar\",\n            \"monthly_plays\": 90\n        },\n        {\n            \"Song\": \"Tell Me Why\",\n            \"monthly_plays\": 105\n        },\n        {\n            \"Song\": \"This Is Me Trying\",\n            \"monthly_plays\": 10\n        },\n        {\n            \"Song\": \"This Is Why We Can't Have Nice Things\",\n            \"monthly_plays\": 92\n        },\n        {\n            \"Song\": \"This Love\",\n            \"monthly_plays\": 68\n        },\n        {\n            \"Song\": \"Tied Together with a Smile\",\n            \"monthly_plays\": 14\n        },\n        {\n            \"Song\": \"Tim McGraw\",\n            \"monthly_plays\": 2\n        },\n        {\n            \"Song\": \"Today Was a Fairytale\",\n            \"monthly_plays\": 61\n        },\n        {\n            \"Song\": \"Treacherous\",\n            \"monthly_plays\": 47\n        },\n        {\n            \"Song\": \"Two Is Better Than One\",\n            \"monthly_plays\": 22\n        },\n        {\n            \"Song\": \"Umbrella (live cover)\",\n            \"monthly_plays\": 0\n        },\n        {\n            \"Song\": \"Untouchable\",\n            \"monthly_plays\": 100\n        },\n        {\n            \"Song\": \"The Way I Loved You\",\n            \"monthly_plays\": 107\n        },\n        {\n            \"Song\": \"We Are Never Ever Getting Back Together\",\n            \"monthly_plays\": 99\n        },\n        {\n            \"Song\": \"Welcome to New York\",\n            \"monthly_plays\": 78\n        },\n        {\n            \"Song\": \"White Christmas (cover)\",\n            \"monthly_plays\": 93\n        },\n        {\n            \"Song\": \"White Horse\",\n            \"monthly_plays\": 100\n        },\n        {\n            \"Song\": \"Wildest Dreams\",\n            \"monthly_plays\": 42\n        },\n        {\n            \"Song\": \"Wonderland\",\n            \"monthly_plays\": 19\n        },\n        {\n            \"Song\": \"You Are in Love\",\n            \"monthly_plays\": 78\n        },\n        {\n            \"Song\": \"You Belong with Me\",\n            \"monthly_plays\": 101\n        },\n        {\n            \"Song\": \"You Need to Calm Down\",\n            \"monthly_plays\": 77\n        },\n        {\n            \"Song\": \"You're Not Sorry\",\n            \"monthly_plays\": 88\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Song(s) play count overall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"overallPlays\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "This request shows how to return each song's play count overall:\n\n1. \"**song**\": song name for only one song play count(_**optional**_).\n2. \"**operation**\": \"**overallPlays**\""
+			},
+			"response": [
+				{
+					"name": "Song(s) play count overall",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"overallPlays\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7712"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:07:25 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f32863ae-05d9-4644-b41d-51f5f008f336"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "7712"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qsEG2yyQ0Fctg="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1e20-jKoHFDmAMtnmQnx+r4meFw+y9mI\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be4c-65d438b4048b873247aac4e1;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "MnGUiXeZSNMnDPxwyWlxJHBCTqUpxXqFa2rH6oNf62HKZ9KICvyLoA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"The 1\",\n            \"total_plays\": 135\n        },\n        {\n            \"Song\": \"22\",\n            \"total_plays\": 89\n        },\n        {\n            \"Song\": \"Afterglow\",\n            \"total_plays\": 194\n        },\n        {\n            \"Song\": \"All Too Well\",\n            \"total_plays\": 179\n        },\n        {\n            \"Song\": \"All You Had to Do Was Stay\",\n            \"total_plays\": 253\n        },\n        {\n            \"Song\": \"American Girl (cover)\",\n            \"total_plays\": 190\n        },\n        {\n            \"Song\": \"The Archer\",\n            \"total_plays\": 56\n        },\n        {\n            \"Song\": \"August\",\n            \"total_plays\": 76\n        },\n        {\n            \"Song\": \"Babe\",\n            \"total_plays\": 48\n        },\n        {\n            \"Song\": \"Back to December\",\n            \"total_plays\": 151\n        },\n        {\n            \"Song\": \"Bad Blood (album version)\",\n            \"total_plays\": 114\n        },\n        {\n            \"Song\": \"Bad Blood (remixed single version)\",\n            \"total_plays\": 143\n        },\n        {\n            \"Song\": \"Beautiful Eyes\",\n            \"total_plays\": 212\n        },\n        {\n            \"Song\": \"Beautiful Ghosts\",\n            \"total_plays\": 306\n        },\n        {\n            \"Song\": \"Begin Again\",\n            \"total_plays\": 161\n        },\n        {\n            \"Song\": \"The Best Day\",\n            \"total_plays\": 256\n        },\n        {\n            \"Song\": \"Bette Davis Eyes (live cover)\",\n            \"total_plays\": 187\n        },\n        {\n            \"Song\": \"Better than Revenge\",\n            \"total_plays\": 186\n        },\n        {\n            \"Song\": \"Betty\",\n            \"total_plays\": 205\n        },\n        {\n            \"Song\": \"Big Star (Live)\",\n            \"total_plays\": 107\n        },\n        {\n            \"Song\": \"Blank Space\",\n            \"total_plays\": 197\n        },\n        {\n            \"Song\": \"Both of Us\",\n            \"total_plays\": 274\n        },\n        {\n            \"Song\": \"Breathe\",\n            \"total_plays\": 235\n        },\n        {\n            \"Song\": \"Breathless (cover)\",\n            \"total_plays\": 112\n        },\n        {\n            \"Song\": \"Call It What You Want\",\n            \"total_plays\": 253\n        },\n        {\n            \"Song\": \"Cardigan\",\n            \"total_plays\": 207\n        },\n        {\n            \"Song\": \"Change\",\n            \"total_plays\": 165\n        },\n        {\n            \"Song\": \"Christmas Must Be Something More\",\n            \"total_plays\": 94\n        },\n        {\n            \"Song\": \"Christmas Tree Farm\",\n            \"total_plays\": 273\n        },\n        {\n            \"Song\": \"Christmases When You Were Mine\",\n            \"total_plays\": 233\n        },\n        {\n            \"Song\": \"Clean\",\n            \"total_plays\": 175\n        },\n        {\n            \"Song\": \"Cold as You\",\n            \"total_plays\": 294\n        },\n        {\n            \"Song\": \"Come Back... Be Here\",\n            \"total_plays\": 148\n        },\n        {\n            \"Song\": \"Come in with the Rain\",\n            \"total_plays\": 145\n        },\n        {\n            \"Song\": \"Cornelia Street\",\n            \"total_plays\": 196\n        },\n        {\n            \"Song\": \"Crazier\",\n            \"total_plays\": 258\n        },\n        {\n            \"Song\": \"Cruel Summer\",\n            \"total_plays\": 62\n        },\n        {\n            \"Song\": \"Dancing with Our Hands Tied\",\n            \"total_plays\": 173\n        },\n        {\n            \"Song\": \"Daylight\",\n            \"total_plays\": 144\n        },\n        {\n            \"Song\": \"Death by a Thousand Cuts\",\n            \"total_plays\": 169\n        },\n        {\n            \"Song\": \"Dear John\",\n            \"total_plays\": 202\n        },\n        {\n            \"Song\": \"Delicate\",\n            \"total_plays\": 167\n        },\n        {\n            \"Song\": \"Don't Blame Me\",\n            \"total_plays\": 185\n        },\n        {\n            \"Song\": \"Dress\",\n            \"total_plays\": 121\n        },\n        {\n            \"Song\": \"Drops of Jupiter (live cover)\",\n            \"total_plays\": 233\n        },\n        {\n            \"Song\": \"Enchanted\",\n            \"total_plays\": 134\n        },\n        {\n            \"Song\": \"End Game\",\n            \"total_plays\": 97\n        },\n        {\n            \"Song\": \"Epiphany\",\n            \"total_plays\": 183\n        },\n        {\n            \"Song\": \"Everything Has Changed\",\n            \"total_plays\": 175\n        },\n        {\n            \"Song\": \"Exile\",\n            \"total_plays\": 165\n        },\n        {\n            \"Song\": \"Eyes Open\",\n            \"total_plays\": 109\n        },\n        {\n            \"Song\": \"False God\",\n            \"total_plays\": 68\n        },\n        {\n            \"Song\": \"Fearless\",\n            \"total_plays\": 262\n        },\n        {\n            \"Song\": \"Fifteen\",\n            \"total_plays\": 239\n        },\n        {\n            \"Song\": \"Forever & Always\",\n            \"total_plays\": 130\n        },\n        {\n            \"Song\": \"Forever & Always (piano version)\",\n            \"total_plays\": 112\n        },\n        {\n            \"Song\": \"Getaway Car\",\n            \"total_plays\": 276\n        },\n        {\n            \"Song\": \"Girl at Home\",\n            \"total_plays\": 121\n        },\n        {\n            \"Song\": \"Gorgeous\",\n            \"total_plays\": 125\n        },\n        {\n            \"Song\": \"Half of My Heart (album version)\",\n            \"total_plays\": 204\n        },\n        {\n            \"Song\": \"Haunted\",\n            \"total_plays\": 215\n        },\n        {\n            \"Song\": \"Hey Stephen\",\n            \"total_plays\": 181\n        },\n        {\n            \"Song\": \"Highway Don't Care\",\n            \"total_plays\": 185\n        },\n        {\n            \"Song\": \"Hoax\",\n            \"total_plays\": 69\n        },\n        {\n            \"Song\": \"Hold On (live cover)\",\n            \"total_plays\": 228\n        },\n        {\n            \"Song\": \"Holy Ground\",\n            \"total_plays\": 157\n        },\n        {\n            \"Song\": \"How You Get the Girl\",\n            \"total_plays\": 141\n        },\n        {\n            \"Song\": \"I Almost Do\",\n            \"total_plays\": 140\n        },\n        {\n            \"Song\": \"I Did Something Bad\",\n            \"total_plays\": 86\n        },\n        {\n            \"Song\": \"I Don't Wanna Live Forever\",\n            \"total_plays\": 258\n        },\n        {\n            \"Song\": \"I Forgot That You Existed\",\n            \"total_plays\": 226\n        },\n        {\n            \"Song\": \"I Heart ?\",\n            \"total_plays\": 175\n        },\n        {\n            \"Song\": \"I Knew You Were Trouble\",\n            \"total_plays\": 71\n        },\n        {\n            \"Song\": \"I Know Places\",\n            \"total_plays\": 161\n        },\n        {\n            \"Song\": \"I Think He Knows\",\n            \"total_plays\": 235\n        },\n        {\n            \"Song\": \"I Want You Back (live cover)\",\n            \"total_plays\": 195\n        },\n        {\n            \"Song\": \"I Wish You Would\",\n            \"total_plays\": 142\n        },\n        {\n            \"Song\": \"If This Was a Movie\",\n            \"total_plays\": 169\n        },\n        {\n            \"Song\": \"Illicit Affairs\",\n            \"total_plays\": 50\n        },\n        {\n            \"Song\": \"Innocent\",\n            \"total_plays\": 222\n        },\n        {\n            \"Song\": \"Invisible\",\n            \"total_plays\": 188\n        },\n        {\n            \"Song\": \"Invisible String\",\n            \"total_plays\": 34\n        },\n        {\n            \"Song\": \"It's Nice to Have a Friend\",\n            \"total_plays\": 229\n        },\n        {\n            \"Song\": \"I'd Lie\",\n            \"total_plays\": 91\n        },\n        {\n            \"Song\": \"I'm Only Me When I'm with You\",\n            \"total_plays\": 107\n        },\n        {\n            \"Song\": \"Jump Then Fall\",\n            \"total_plays\": 83\n        },\n        {\n            \"Song\": \"King of My Heart\",\n            \"total_plays\": 200\n        },\n        {\n            \"Song\": \"The Lakes\",\n            \"total_plays\": 90\n        },\n        {\n            \"Song\": \"Last Christmas (cover)\",\n            \"total_plays\": 200\n        },\n        {\n            \"Song\": \"The Last Great American Dynasty\",\n            \"total_plays\": 208\n        },\n        {\n            \"Song\": \"Last Kiss\",\n            \"total_plays\": 186\n        },\n        {\n            \"Song\": \"The Last Time\",\n            \"total_plays\": 117\n        },\n        {\n            \"Song\": \"Long Live\",\n            \"total_plays\": 130\n        },\n        {\n            \"Song\": \"Long Live (single version)\",\n            \"total_plays\": 243\n        },\n        {\n            \"Song\": \"London Boy\",\n            \"total_plays\": 217\n        },\n        {\n            \"Song\": \"Look What You Made Me Do\",\n            \"total_plays\": 193\n        },\n        {\n            \"Song\": \"Love Story\",\n            \"total_plays\": 168\n        },\n        {\n            \"Song\": \"Lover\",\n            \"total_plays\": 200\n        },\n        {\n            \"Song\": \"Lover (Remix)\",\n            \"total_plays\": 179\n        },\n        {\n            \"Song\": \"The Lucky One\",\n            \"total_plays\": 237\n        },\n        {\n            \"Song\": \"Macavity (cover)\",\n            \"total_plays\": 60\n        },\n        {\n            \"Song\": \"Mad Woman\",\n            \"total_plays\": 184\n        },\n        {\n            \"Song\": \"The Man\",\n            \"total_plays\": 211\n        },\n        {\n            \"Song\": \"Mary's Song (Oh My My My)\",\n            \"total_plays\": 87\n        },\n        {\n            \"Song\": \"Me!\",\n            \"total_plays\": 135\n        },\n        {\n            \"Song\": \"Mean\",\n            \"total_plays\": 217\n        },\n        {\n            \"Song\": \"Mine\",\n            \"total_plays\": 262\n        },\n        {\n            \"Song\": \"Mirrorball\",\n            \"total_plays\": 277\n        },\n        {\n            \"Song\": \"Miss Americana & the Heartbreak Prince\",\n            \"total_plays\": 201\n        },\n        {\n            \"Song\": \"The Moment I Knew\",\n            \"total_plays\": 188\n        },\n        {\n            \"Song\": \"My Tears Ricochet\",\n            \"total_plays\": 121\n        },\n        {\n            \"Song\": \"Never Grow Up\",\n            \"total_plays\": 152\n        },\n        {\n            \"Song\": \"New Romantics\",\n            \"total_plays\": 165\n        },\n        {\n            \"Song\": \"New Year's Day\",\n            \"total_plays\": 204\n        },\n        {\n            \"Song\": \"Only the Young\",\n            \"total_plays\": 176\n        },\n        {\n            \"Song\": \"The Other Side of the Door\",\n            \"total_plays\": 170\n        },\n        {\n            \"Song\": \"Our Song\",\n            \"total_plays\": 190\n        },\n        {\n            \"Song\": \"Ours\",\n            \"total_plays\": 149\n        },\n        {\n            \"Song\": \"Out of the Woods\",\n            \"total_plays\": 76\n        },\n        {\n            \"Song\": \"The Outside\",\n            \"total_plays\": 169\n        },\n        {\n            \"Song\": \"Paper Rings\",\n            \"total_plays\": 168\n        },\n        {\n            \"Song\": \"Peace\",\n            \"total_plays\": 297\n        },\n        {\n            \"Song\": \"A Perfectly Good Heart\",\n            \"total_plays\": 218\n        },\n        {\n            \"Song\": \"Picture to Burn\",\n            \"total_plays\": 125\n        },\n        {\n            \"Song\": \"A Place in This World\",\n            \"total_plays\": 120\n        },\n        {\n            \"Song\": \"...Ready for It?\",\n            \"total_plays\": 104\n        },\n        {\n            \"Song\": \"Red\",\n            \"total_plays\": 141\n        },\n        {\n            \"Song\": \"Ronan\",\n            \"total_plays\": 246\n        },\n        {\n            \"Song\": \"Sad Beautiful Tragic\",\n            \"total_plays\": 118\n        },\n        {\n            \"Song\": \"Safe & Sound\",\n            \"total_plays\": 136\n        },\n        {\n            \"Song\": \"Santa Baby (cover)\",\n            \"total_plays\": 162\n        },\n        {\n            \"Song\": \"September (cover)\",\n            \"total_plays\": 67\n        },\n        {\n            \"Song\": \"Seven\",\n            \"total_plays\": 297\n        },\n        {\n            \"Song\": \"Shake It Off\",\n            \"total_plays\": 125\n        },\n        {\n            \"Song\": \"Should've Said No\",\n            \"total_plays\": 132\n        },\n        {\n            \"Song\": \"Silent Night (cover)\",\n            \"total_plays\": 152\n        },\n        {\n            \"Song\": \"So It Goes...\",\n            \"total_plays\": 163\n        },\n        {\n            \"Song\": \"Soon You'll Get Better\",\n            \"total_plays\": 233\n        },\n        {\n            \"Song\": \"Sparks Fly\",\n            \"total_plays\": 212\n        },\n        {\n            \"Song\": \"Speak Now\",\n            \"total_plays\": 166\n        },\n        {\n            \"Song\": \"Starlight\",\n            \"total_plays\": 109\n        },\n        {\n            \"Song\": \"State of Grace\",\n            \"total_plays\": 72\n        },\n        {\n            \"Song\": \"Stay Beautiful\",\n            \"total_plays\": 203\n        },\n        {\n            \"Song\": \"Stay Stay Stay\",\n            \"total_plays\": 35\n        },\n        {\n            \"Song\": \"The Story of Us\",\n            \"total_plays\": 97\n        },\n        {\n            \"Song\": \"Style\",\n            \"total_plays\": 307\n        },\n        {\n            \"Song\": \"Superman\",\n            \"total_plays\": 124\n        },\n        {\n            \"Song\": \"Superstar\",\n            \"total_plays\": 107\n        },\n        {\n            \"Song\": \"Sweeter than Fiction\",\n            \"total_plays\": 153\n        },\n        {\n            \"Song\": \"Teardrops on My Guitar\",\n            \"total_plays\": 210\n        },\n        {\n            \"Song\": \"Tell Me Why\",\n            \"total_plays\": 155\n        },\n        {\n            \"Song\": \"This Is Me Trying\",\n            \"total_plays\": 196\n        },\n        {\n            \"Song\": \"This Is Why We Can't Have Nice Things\",\n            \"total_plays\": 208\n        },\n        {\n            \"Song\": \"This Love\",\n            \"total_plays\": 118\n        },\n        {\n            \"Song\": \"Tied Together with a Smile\",\n            \"total_plays\": 185\n        },\n        {\n            \"Song\": \"Tim McGraw\",\n            \"total_plays\": 42\n        },\n        {\n            \"Song\": \"Today Was a Fairytale\",\n            \"total_plays\": 129\n        },\n        {\n            \"Song\": \"Treacherous\",\n            \"total_plays\": 104\n        },\n        {\n            \"Song\": \"Two Is Better Than One\",\n            \"total_plays\": 90\n        },\n        {\n            \"Song\": \"Umbrella (live cover)\",\n            \"total_plays\": 159\n        },\n        {\n            \"Song\": \"Untouchable\",\n            \"total_plays\": 218\n        },\n        {\n            \"Song\": \"The Way I Loved You\",\n            \"total_plays\": 229\n        },\n        {\n            \"Song\": \"We Are Never Ever Getting Back Together\",\n            \"total_plays\": 162\n        },\n        {\n            \"Song\": \"Welcome to New York\",\n            \"total_plays\": 178\n        },\n        {\n            \"Song\": \"White Christmas (cover)\",\n            \"total_plays\": 151\n        },\n        {\n            \"Song\": \"White Horse\",\n            \"total_plays\": 215\n        },\n        {\n            \"Song\": \"Wildest Dreams\",\n            \"total_plays\": 109\n        },\n        {\n            \"Song\": \"Wonderland\",\n            \"total_plays\": 108\n        },\n        {\n            \"Song\": \"You Are in Love\",\n            \"total_plays\": 189\n        },\n        {\n            \"Song\": \"You Belong with Me\",\n            \"total_plays\": 176\n        },\n        {\n            \"Song\": \"You Need to Calm Down\",\n            \"total_plays\": 186\n        },\n        {\n            \"Song\": \"You're Not Sorry\",\n            \"total_plays\": 225\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Most Popular by month",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"mostPopularByMonth\",\n    \"month\": \"August\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch song with its album,artist, writer and play count, based on highest play count by month specified.\n\n1. \"**month**\": month for which play count to be considered.\n2. \"**operation**\": \"**mostPopularByMonth**\""
+			},
+			"response": [
+				{
+					"name": "Most Popular by month",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"mostPopularByMonth\",\n    \"month\": \"August\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:07:43 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "0e23e713-3c16-441c-899a-3beaa39739f1"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "115"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qvAFWwyQ0FifQ="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"73-GM2H2X8OF2sVg9VXGPTVTo7MjXM\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be5f-65f43f784a7a592a44d1d05e;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "GECTZgcxB3IahK8L8WWd4p9BZhzp6Crf5BEi_5kK_uk8pWLzYFdjwA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"Fifteen\",\n            \"Album\": \"Fearless\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift\",\n            \"monthly_plays\": 99\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Most Popular overall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"mostPopularOverall\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch song with its album,artist, writer and play count, based on highest sum of play count of all months.\n\n1. \"**operation**\": \"**mostPopularOverall**\""
+			},
+			"response": [
+				{
+					"name": "Most Popular overall",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"mostPopularOverall\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:07:50 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "8d283673-a6f2-44ac-951b-21e1ffe60da0"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "140"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qwCF1IyQ0FVng="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"8c-Yt5nEjJF+Uh32WrZymMObTWzFZQ\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be66-0babbb2b0984ebf365d5f49b;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "J0iepzTC4EV_PAdjePBXyMgWKiMHz-gzGO9H_ASsNsPVYWGZLC9PeA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"Style\",\n            \"Album\": \"1989\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Max Martin Shellback Ali Payami\",\n            \"total_plays\": 307\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Song performance: month 1 vs month 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"song\": \"The 1\",\n    \"operation\": \"compareMonths\",\n    \"month\": \"june\",\n    \"month2\": \"august\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch play counts of a song in 2 months request. Allows to assess how well it did in comparision.\n\n1. \"**song**\": song name.\n2. \"**operation**\": \"**compareMonths**\"\n3. \"**month**\": Either of \"**june**\" / \"**july**\" / \"**august**\"\n4. \"**month2**\": Either of \"june\" / \"july\" / \"august\", but excluding the one specified in \"**month**\" param."
+			},
+			"response": [
+				{
+					"name": "Song performance: month 1 vs month 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"song\": \"The 1\",\n    \"operation\": \"compareMonths\",\n    \"month\": \"june\",\n    \"month2\": \"august\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:08:02 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "6e581e3f-103d-4c6a-81cd-776dd989a1c4"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "61"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qx_EbJSQ0FhOw="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"3d-d36aT7UwerWHVa5hHkc2vQ2jvzU\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be72-7778e30f4b73874442aa1bda;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "D1Bdlb3P0F_uplipunl4WawF635h8OZ9PlAARp571KOku8i4BafAVg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"The 1\",\n            \"june_plays\": 68,\n            \"august_plays\": 61\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Most popular artist: artist 1 vs artist 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"compareArtists\",\n    \"artist\": \"Taylor Swift\",\n    \"compareArtist\": \"Sugarland featuring Taylor Swift\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch artist name and total of each of their song's play count in all years and all months.\n\n1. \"**operation**\": \"**compareArtists**\"\n2. \"**artist**\": Artist 1 name to compare for.\n3. \"**artist2**\": Artist 2 name to compare with."
+			},
+			"response": [
+				{
+					"name": "Song performance: artist 1 vs artist 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"compareArtists\",\n    \"artist\": \"Taylor Swift\",\n    \"compareArtist\": \"Sugarland featuring Taylor Swift\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:08:07 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "93d4e479-4434-40a2-803e-238c41d131fa"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qyrGg7SQ0Fvqg="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-s/nKxFWL/zfv2gmUcpu51m+Ed94\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be77-2b9a49741b636ebc3e236f39;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "qi030JrKUn6_Exk9bDvyzTghZ7PgqGPh6OMc2VzrYB9UQufCG80QxA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Artist\": \"Sugarland featuring Taylor Swift\",\n            \"total_plays\": 48\n        },\n        {\n            \"Artist\": \"Taylor Swift\",\n            \"total_plays\": 25382\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Songs with play count over > \"n\" by month",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"playsOverByMonth\",\n    \"month\": \"july\",\n    \"playsOver\": 109,\n    \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch songs with their artist, writer, album, year and each of month's play count whose play count by month specified is greater than \"_**n\"**_ meaning value of _**playsOver**_ param and month be the one that specified in request.\n\n1. \"**operation**\": \"**playsOverByMonth**\"\n2. \"**month**\": The month of which play count to be considered.\n3. \"**playsOver**\": A number specifying play count should be greater than this value."
+			},
+			"response": [
+				{
+					"name": "Songs with play count over > n by month",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"playsOverByMonth\",\n    \"month\": \"july\",\n    \"playsOver\": 109,\n    \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "782"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:08:10 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "20533c90-c6cf-49f3-b2bf-f85f0549ab3b"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "782"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qzNG3MSQ0Ff4w="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"30e-uzWSPfGy4FLzaEkilc6e6C43ifc\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be7a-75b716cb2d512ab21dd4245f;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "mh7YZdWvFLu-h5U7tSE_Sv6CpA3fVxvD13XBJxh8oQqQXrOfvQGMtQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"Better than Revenge\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift\",\n            \"Album\": \"Speak Now\",\n            \"Year\": \"2010\",\n            \"Plays-June\": \"5\",\n            \"Plays-July\": \"110\",\n            \"Plays-August\": \"71 \"\n        },\n        {\n            \"Song\": \"Christmases When You Were Mine\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Liz Rose Nathan Chapman\",\n            \"Album\": \"Sounds of the Season\",\n            \"Year\": \"2007\",\n            \"Plays-June\": \"80\",\n            \"Plays-July\": \"110\",\n            \"Plays-August\": \"43 \"\n        },\n        {\n            \"Song\": \"Epiphany\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Aaron Dessner\",\n            \"Album\": \"Folklore\",\n            \"Year\": \"2020\",\n            \"Plays-June\": \"44\",\n            \"Plays-July\": \"110\",\n            \"Plays-August\": \"29 \"\n        },\n        {\n            \"Song\": \"Lover (Remix)\",\n            \"Artist\": \"Taylor Swift featuring Shawn Mendes\",\n            \"Writer\": \"Taylor Swift Shawn Mendes Scott Harris\",\n            \"Album\": \"None[e]\",\n            \"Year\": \"2019\",\n            \"Plays-June\": \"59\",\n            \"Plays-July\": \"110\",\n            \"Plays-August\": \"10 \"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Songs with play count over > \"n\" by overall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\": \"playsOverByOverall\",\n    \"playsOver\": 300,\n    \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/songs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"songs"
+					]
+				},
+				"description": "To fetch songs with their artist, writer, album, year and each of month's play count, whose combined play count (_**total of june, jully and august**_) is greater than \"_**n**_\" meaning value of _**playsOver**_ param.\n\n1. \"**operation**\": \"**playsOverByOverall**\"\n2. \"**playsOver**\": A number specifying play count should be greater than this value."
+			},
+			"response": [
+				{
+					"name": "Songs with play count over > n by overall",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\": \"playsOverByOverall\",\n    \"playsOver\": 300,\n    \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/songs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "427"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Sep 2023 17:08:14 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "0df27cf1-efe7-450f-9be3-183c724261d8"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "427"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "L0qzvH0wSQ0FuOg="
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1ab-4ISZubu8d3O8nl9oSfiJJqsRo10\""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6511be7e-65c196b75b8e8ed72ff916e1;Sampled=0;lineage=dc4d01a9:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 65d1d4185f986da0cffb46ca092db76e.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BKK50-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "TJTbPh-l325TPsJRIKWUfbOqh7kZnQU3PcNQjF-vNx3EE-YK999Yfg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"Song\": \"Beautiful Ghosts\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Andrew Lloyd Webber\",\n            \"Album\": \"Cats: Highlights from the Motion Picture Soundtrack\",\n            \"Year\": \"2019\",\n            \"Plays-June\": \"100\",\n            \"Plays-July\": \"106\",\n            \"Plays-August\": \"100 \"\n        },\n        {\n            \"Song\": \"Style\",\n            \"Artist\": \"Taylor Swift\",\n            \"Writer\": \"Taylor Swift Max Martin Shellback Ali Payami\",\n            \"Album\": \"1989\",\n            \"Year\": \"2014\",\n            \"Plays-June\": \"103\",\n            \"Plays-July\": \"94\",\n            \"Plays-August\": \"110 \"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
