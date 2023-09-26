@@ -1,13 +1,15 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const router = require("./src/router.js")
+require("dotenv").config()
+
 const app = express();
-let PORT = 3000;
+let PORT = process.env.PORT_SERVER;
 
 app.use("/api/v1", router)
 
 if (isTestEnv()) {
-    PORT = 3001;
+    PORT = process.env.PORT_TEST;
 }
 
 const server = app.listen(PORT, () => {
