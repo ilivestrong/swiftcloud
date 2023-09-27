@@ -62,3 +62,10 @@ Also, POSTMAN requests are also exported as JSON file in the /docs folder in the
 - Local : This requires you to run the local app server first.
 - AWS: This will talk to deployed API on AWS using API Gateway.  
 ***Results will be same however.
+
+
+## API Deployment
+The API is deployed to AWS using API Gateway and is accessible here:  
+```
+https://8trlgtixdl.execute-api.ap-southeast-1.amazonaws.com/swiftcloud/api/v1/songs
+```
